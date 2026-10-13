@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOH NAKULA - Champion Cyclist & Endurance Athlete</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800;1,900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        velo: {
+                            black: '#0d0f12',
+                            dark: '#14181f',
+                            card: '#1c222d',
+                            orange: '#ff5722',
+                            orangeHover: '#e64a19',
+                            lime: '#ccff00',
+                            cyan: '#00e5ff',
+                            slate: '#2a3240'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0d0f12;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .text-glow-orange {
+            text-shadow: 0 0 20px rgba(255, 87, 34, 0.6);
+        }
+        .text-glow-lime {
+            text-shadow: 0 0 20px rgba(204, 255, 0, 0.6);
+        }
+        .bg-chain-pattern {
+            background-image: radial-gradient(rgba(255, 87, 34, 0.12) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+        .glass-panel {
+            background: rgba(28, 34, 45, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0f12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a3240;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff5722;
+        }
+    </style>
+</head>
+<body class="bg-velo-black text-gray-100 bg-chain-pattern antialiased">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-velo-black/85 backdrop-blur-md border-b border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-velo-orange to-amber-500 flex items-center justify-center text-velo-black font-black text-xl transform group-hover:rotate-12 transition-all duration-300 shadow-[0_0_20px_rgba(255,87,34,0.5)]">
+                    <i class="fa-solid fa-bicycle text-white"></i>
+                </div>
+                <div>
+                    <span class="font-display font-black text-xl tracking-wider text-white block leading-none">MOH NAKULA</span>
+                    <span class="text-[10px] font-bold text-velo-orange tracking-widest uppercase">Competitive Cyclist & Champion</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-7 font-semibold text-sm">
+                <a href="#about" class="text-gray-300 hover:text-velo-orange transition-colors">Profil</a>
+                <a href="#trophies" class="text-gray-300 hover:text-velo-orange transition-colors">Prestasi & Piala</a>
+                <a href="#stats" class="text-gray-300 hover:text-velo-orange transition-colors">Statistik</a>
+                <a href="#garage" class="text-gray-300 hover:text-velo-orange transition-colors">Sepeda & Gear</a>
+                <a href="#routes" class="text-gray-300 hover:text-velo-orange transition-colors">Rute Favorit</a>
+                <a href="#gallery" class="text-gray-300 hover:text-velo-orange transition-colors">Galeri Laga</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-velo-orange to-amber-500 text-white font-bold hover:shadow-[0_0_20px_rgba(255,87,34,0.6)] transition-all transform hover:-translate-y-0.5">
+                    Hubungi / Sponsor
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-velo-orange focus:outline-none p-2" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-velo-dark/95 border-b border-gray-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block py-2 text-gray-300 hover:text-velo-orange font-medium">Profil</a>
+            <a href="#trophies" class="mobile-link block py-2 text-gray-300 hover:text-velo-orange font-medium">Prestasi & Piala</a>
+            <a href="#stats" class="mobile-link block py-2 text-gray-300 hover:text-velo-orange font-medium">Statistik</a>
+            <a href="#garage" class="mobile-link block py-2 text-gray-300 hover:text-velo-orange font-medium">Sepeda & Gear</a>
+            <a href="#routes" class="mobile-link block py-2 text-gray-300 hover:text-velo-orange font-medium">Rute Favorit</a>
+            <a href="#gallery" class="mobile-link block py-2 text-gray-300 hover:text-velo-orange font-medium">Galeri Laga</a>
+            <a href="#contact" class="mobile-link block py-2.5 text-center rounded-lg bg-velo-orange text-white font-bold">Hubungi / Sponsor</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+        <!-- Glowing Atmospheric Orbs -->
+        <div class="absolute top-1/3 -left-20 w-96 h-96 bg-velo-orange/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-velo-lime/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800/80 border border-velo-orange/40 text-velo-orange text-xs sm:text-sm font-bold tracking-wider uppercase backdrop-blur-md">
+                        <i class="fa-solid fa-person-biking text-velo-lime"></i> ENDURANCE & ROAD RACE ATHLETE
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-black tracking-tight text-white uppercase italic leading-none">
+                        MOH <span class="text-transparent bg-clip-text bg-gradient-to-r from-velo-orange via-amber-400 to-velo-lime text-glow-orange">NAKULA</span>
+                    </h1>
+                    
+                    <p class="text-xl sm:text-2xl font-bold italic text-velo-lime text-glow-lime font-display tracking-wide">
+                        "Unstoppable Cadence, Endless Horizons"
+                    </p>
+                    
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Atlet sepeda endurance dan road race berdedikasi. Berfokus pada penaklukan rute tanjakan ekstrem, Criterium berkecepatan tinggi, serta mengoleksi piala dalam berbagai kompetisi balap sepeda bergengsi.
+                    </p>
+                    
+                    <!-- Call To Action Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#trophies" class="px-8 py-4 rounded-xl bg-gradient-to-r from-velo-orange to-amber-500 text-white font-extrabold flex items-center gap-3 hover:shadow-[0_0_30px_rgba(255,87,34,0.5)] transition-all transform hover:-translate-y-1">
+                            <i class="fa-solid fa-trophy text-lg"></i> Lihat Koleksi Piala
+                        </a>
+                        <a href="#garage" class="px-8 py-4 rounded-xl bg-velo-card text-white border border-gray-700 font-bold flex items-center gap-3 hover:border-velo-orange hover:text-velo-orange transition-all transform hover:-translate-y-1">
+                            <i class="fa-solid fa-gear text-velo-lime"></i> Eksplor Sepeda Saya
+                        </a>
+                    </div>
+
+                    <!-- Quick Cyclist Stats Badge Banner -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-gray-800/80 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Spesialisasi</p>
+                            <p class="text-sm sm:text-base font-bold text-white mt-1">Road Race & Climber</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Rider Type</p>
+                            <p class="text-sm sm:text-base font-bold text-velo-lime mt-1">Puncheur / All-Rounder</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Trophy Count</p>
+                            <p class="text-sm sm:text-base font-bold text-velo-orange mt-1">12+ Podium Finish</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Card Graphic -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-velo-orange via-amber-500 to-velo-lime rounded-3xl blur-md opacity-50 animate-pulse"></div>
+                        
+                        <div class="relative bg-velo-card border border-gray-700 rounded-3xl p-6 shadow-2xl overflow-hidden">
+                            <!-- Bicycle Graphic Banner -->
+                            <div class="relative h-80 sm:h-96 w-full rounded-2xl bg-gradient-to-b from-gray-900 to-velo-black flex flex-col items-center justify-center p-6 border border-gray-800 overflow-hidden">
+                                
+                                <i class="fa-solid fa-person-biking text-[160px] text-velo-orange/10 absolute -right-6 -bottom-6 transform -rotate-12"></i>
+                                
+                                <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-gradient-to-br from-velo-orange to-velo-lime p-1 mb-4 shadow-[0_0_30px_rgba(255,87,34,0.4)]">
+                                    <div class="w-full h-full rounded-full bg-velo-dark flex items-center justify-center overflow-hidden">
+                                        <i class="fa-solid fa-helmet-safety text-5xl text-velo-lime"></i>
+                                    </div>
+                                </div>
+                                
+                                <h3 class="font-display font-black text-2xl text-white">MOH NAKULA</h3>
+                                <p class="text-xs text-velo-lime font-bold tracking-widest uppercase mb-4"><i class="fa-solid fa-check-circle mr-1"></i> Verified Strava Athlete</p>
+                                
+                                <div class="w-full bg-velo-black/70 backdrop-blur p-3.5 rounded-xl border border-gray-800 flex justify-around text-center">
+                                    <div>
+                                        <p class="text-[10px] text-gray-400 uppercase font-semibold">FTP Power</p>
+                                        <p class="text-base font-black text-white">310 W</p>
+                                    </div>
+                                    <div class="border-r border-gray-800"></div>
+                                    <div>
+                                        <p class="text-[10px] text-gray-400 uppercase font-semibold">Max Speed</p>
+                                        <p class="text-base font-black text-velo-orange">68.5 km/h</p>
+                                    </div>
+                                    <div class="border-r border-gray-800"></div>
+                                    <div>
+                                        <p class="text-[10px] text-gray-400 uppercase font-semibold">Elevation</p>
+                                        <p class="text-base font-black text-velo-lime">45,000 m+</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-velo-dark relative border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-velo-orange uppercase tracking-widest">Filosofi & Perjalanan</h2>
+                <p class="text-3xl sm:text-4xl font-display font-black text-white mt-1">PROFIL NAKULA & PASSION BERSEPEDA</p>
+                <div class="w-16 h-1 bg-velo-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Bio Story -->
+                <div class="lg:col-span-7 bg-velo-card border border-gray-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="w-3 h-8 bg-velo-orange rounded-full"></span>
+                            <h3 class="text-2xl font-display font-bold text-white">Menaklukkan Jalanan, Menguji Batas Kemampuan</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Saya <strong class="text-velo-orange">Moh Nakula</strong>, seorang pengayuh pedal yang terobsesi dengan kecepatan, ketahanan fisik, dan keindahan setiap rute yang ditempuh. Bagi saya, bersepeda bukan sekadar olahraga, melainkan bentuk kedisiplinan dan kebebasan sejati.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Perjalanan saya di dunia balap sepeda dimulai dari kesenangan menjajal rute lokal hingga aktif mengikuti turnamen balap **Road Race**, **Criterium Series**, dan tantangan **Gravel Endurance**. Melalui konsistensi latihan dan strategi kayuhan yang terukur, saya telah meraih berbagai piala dan penghargaan di atas podium.
+                        </p>
+                    </div>
+
+                    <!-- Core Principles Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-gray-800">
+                        <div class="flex items-start gap-3">
+                            <div class="p-3 rounded-xl bg-velo-orange/10 text-velo-orange">
+                                <i class="fa-solid fa-heart-pulse text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Disiplin Ketat</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Latihan fisik terstruktur, latihan kadens, dan interval mingguan.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-3 rounded-xl bg-velo-lime/10 text-velo-lime">
+                                <i class="fa-solid fa-mountain text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">King of Mountain Focus</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Spesialis menaklukkan tanjakan tinggi (King of Mountain / KOM).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cyclist Key Specs -->
+                <div class="lg:col-span-5 bg-velo-card border border-gray-800 rounded-2xl p-6 sm:p-8 flex flex-col justify-center">
+                    <h3 class="text-xl font-display font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-id-card text-velo-orange"></i> Rider Profile Card
+                    </h3>
+
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3.5 rounded-xl bg-velo-black/60 border border-gray-800">
+                            <span class="text-gray-400 text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-user text-gray-500 w-5"></i> Nama Lengkap
+                            </span>
+                            <span class="font-bold text-white text-sm">MOH NAKULA</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center p-3.5 rounded-xl bg-velo-black/60 border border-gray-800">
+                            <span class="text-gray-400 text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-flag-checkered text-gray-500 w-5"></i> Kategori Balap
+                            </span>
+                            <span class="font-bold text-velo-orange text-sm">Men Elite / Junior Open</span>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3.5 rounded-xl bg-velo-black/60 border border-gray-800">
+                            <span class="text-gray-400 text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-gauge-high text-gray-500 w-5"></i> Cadence Rata-rata
+                            </span>
+                            <span class="font-bold text-white text-sm">88 - 95 RPM</span>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3.5 rounded-xl bg-velo-black/60 border border-gray-800">
+                            <span class="text-gray-400 text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-heartbeat text-gray-500 w-5"></i> Max Heart Rate
+                            </span>
+                            <span class="font-bold text-white text-sm">192 BPM</span>
+                        </div>
+
+                        <div class="flex justify-between items-center p-3.5 rounded-xl bg-velo-black/60 border border-gray-800">
+                            <span class="text-gray-400 text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-trophy text-gray-500 w-5"></i> Total Trophy Collections
+                            </span>
+                            <span class="font-bold text-velo-lime text-sm">12+ Gelar Kejuaraan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trophy & Achievements Section -->
+    <section id="trophies" class="py-20 bg-velo-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-velo-orange uppercase tracking-widest">Koleksi Kejuaraan</h2>
+                <p class="text-3xl sm:text-4xl font-display font-black text-white mt-1">PIALA & PRESTASI BERSEPEDA</p>
+                <div class="w-16 h-1 bg-velo-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Trophy Interactive Filters -->
+            <div class="flex justify-center gap-2 sm:gap-4 mb-10 flex-wrap">
+                <button class="trophy-filter active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-velo-orange text-white" data-filter="all">
+                    Semua Piala
+                </button>
+                <button class="trophy-filter px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-velo-card text-gray-300 hover:text-white hover:bg-gray-700" data-filter="road">
+                    🚴 Road Race
+                </button>
+                <button class="trophy-filter px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-velo-card text-gray-300 hover:text-white hover:bg-gray-700" data-filter="criterium">
+                    ⚡ Criterium
+                </button>
+                <button class="trophy-filter px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-velo-card text-gray-300 hover:text-white hover:bg-gray-700" data-filter="endurance">
+                    ⛰️ Endurance & KOM
+                </button>
+            </div>
+
+            <!-- Trophy Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="trophyGrid">
+                
+                <!-- Trophy Item 1 -->
+                <div class="trophy-card road bg-velo-card border border-amber-500/40 rounded-2xl p-6 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 shadow-xl cursor-pointer" onclick="openTrophyModal('Juara 1 National Road Race Challenge', '2026', 'Road Race - Men Open', '120 KM', 'Menang Sprint Finish di babak akhir 500 meter terakhir dengan kecepatan puncak 64 km/jam.')">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
+                            <i class="fa-solid fa-trophy mr-1"></i> JUARA 1 EMAS
+                        </span>
+                        <span class="text-xs text-gray-400 font-bold">2026</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-velo-orange transition-colors">
+                        National Road Race Championship
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4">Kategori Road Race Men Open 120 KM. Menang sprint breakaway dramatis.</p>
+                    <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-800">
+                        <span><i class="fa-solid fa-location-dot text-velo-orange mr-1"></i> Sirkuit Utama</span>
+                        <span class="text-velo-lime font-bold">Detail View &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Trophy Item 2 -->
+                <div class="trophy-card criterium bg-velo-card border border-amber-500/40 rounded-2xl p-6 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 shadow-xl cursor-pointer" onclick="openTrophyModal('Juara 1 Criterium City Night Race', '2025', 'Criterium - Speed Sprint', '25 Laps', 'Menguasai laps lap demi lap dan meraih poin tertinggi dalam Intermediate Sprint.')">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
+                            <i class="fa-solid fa-trophy mr-1"></i> JUARA 1 EMAS
+                        </span>
+                        <span class="text-xs text-gray-400 font-bold">2025</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-velo-orange transition-colors">
+                        Criterium City Night Race Series
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4">Balapan sirkuit perkotaan 25 laps dengan tikungan tajam berkecepatan tinggi.</p>
+                    <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-800">
+                        <span><i class="fa-solid fa-bolt text-amber-400 mr-1"></i> Fast Circuit</span>
+                        <span class="text-velo-lime font-bold">Detail View &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Trophy Item 3 -->
+                <div class="trophy-card endurance bg-velo-card border border-gray-400/40 rounded-2xl p-6 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 shadow-xl cursor-pointer" onclick="openTrophyModal('King of Mountain (KOM) Tour Challenge', '2025', 'Hill Climb - Mountain Endurance', '2,400m Elevation', 'Menaklukkan tanjakan elevasi ekstrem grade 14% dan mengunci tempat di podium 2.')">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-gray-400/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-black bg-gray-400/20 text-gray-300 border border-gray-400/40 uppercase">
+                            <i class="fa-solid fa-medal mr-1"></i> RUNNER UP
+                        </span>
+                        <span class="text-xs text-gray-400 font-bold">2025</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-velo-orange transition-colors">
+                        Tour Endurance King of Mountain
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4">Tantangan tanjakan puncak gunung dengan elevasi acumulatif 2.400 mdpl.</p>
+                    <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-800">
+                        <span><i class="fa-solid fa-mountain text-velo-lime mr-1"></i> Elevation Pass</span>
+                        <span class="text-velo-lime font-bold">Detail View &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Trophy Item 4 -->
+                <div class="trophy-card road bg-velo-card border border-amber-500/40 rounded-2xl p-6 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 shadow-xl cursor-pointer" onclick="openTrophyModal('Juara 1 Gravel & Cross-Country Race', '2024', 'Gravel All-Road', '85 KM', 'Medan berbatu dan makadam ditaklukkan dengan kecepatan rata-rata 31 km/jam.')">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
+                            <i class="fa-solid fa-trophy mr-1"></i> JUARA 1 EMAS
+                        </span>
+                        <span class="text-xs text-gray-400 font-bold">2024</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-velo-orange transition-colors">
+                        Gravel All-Road Challenge Trophy
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4">Kombinasi jalan aspal dan trek gravel tanah berbatu sepanjang 85 KM.</p>
+                    <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-800">
+                        <span><i class="fa-solid fa-compass text-amber-400 mr-1"></i> Mixed Terrain</span>
+                        <span class="text-velo-lime font-bold">Detail View &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Trophy Item 5 -->
+                <div class="trophy-card criterium bg-velo-card border border-amber-500/40 rounded-2xl p-6 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 shadow-xl cursor-pointer" onclick="openTrophyModal('Juara 1 Grand Prix Junior Cyclist', '2024', 'Youth Road Race', '60 KM', 'Kemenangan dominan dari awal hingga akhir lap.')">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
+                            <i class="fa-solid fa-trophy mr-1"></i> JUARA 1 EMAS
+                        </span>
+                        <span class="text-xs text-gray-400 font-bold">2024</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-velo-orange transition-colors">
+                        Grand Prix Youth Cyclist Trophy
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4">Kejuaraan khusus pelari usia muda balap sepeda kategori kecepatan tinggi.</p>
+                    <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-800">
+                        <span><i class="fa-solid fa-flag text-velo-orange mr-1"></i> Circuit Grand Prix</span>
+                        <span class="text-velo-lime font-bold">Detail View &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Trophy Item 6 -->
+                <div class="trophy-card endurance bg-velo-card border border-amber-500/40 rounded-2xl p-6 relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 shadow-xl cursor-pointer" onclick="openTrophyModal('Juara 1 Century Ride 150K Ultra Endurance', '2023', 'Ultra Endurance', '150 KM', 'Lulus tantangan 150 KM nonstop dengan waktu tempuh memukau.')">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full pointer-events-none"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase">
+                            <i class="fa-solid fa-trophy mr-1"></i> TROFI FINISHER #1
+                        </span>
+                        <span class="text-xs text-gray-400 font-bold">2023</span>
+                    </div>
+                    <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-velo-orange transition-colors">
+                        Century Ride 150K Ultra Trophy
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4">Uji ketahanan fisik 150 Kilometer nonstop menembus beberapa kota.</p>
+                    <div class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-gray-800">
+                        <span><i class="fa-solid fa-route text-velo-lime mr-1"></i> Long Distance</span>
+                        <span class="text-velo-lime font-bold">Detail View &rarr;</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Stats Counter Section -->
+    <section id="stats" class="py-20 bg-velo-dark border-y border-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-velo-orange uppercase tracking-widest">Catatan Kilometer</h2>
+                <p class="text-3xl sm:text-4xl font-display font-black text-white mt-1">STATISTIK & CAKUPAN KAYUHAN</p>
+                <div class="w-16 h-1 bg-velo-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                
+                <!-- Counter 1 -->
+                <div class="bg-velo-card p-6 rounded-2xl border border-gray-800 text-center hover:border-velo-orange transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-velo-orange/10 text-velo-orange flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <p class="text-3xl sm:text-5xl font-black font-display text-white counter" data-target="18500">0</p>
+                    <p class="text-xs text-gray-400 mt-2 uppercase tracking-wider font-bold">Total Jarak Tempuh (KM)</p>
+                </div>
+
+                <!-- Counter 2 -->
+                <div class="bg-velo-card p-6 rounded-2xl border border-gray-800 text-center hover:border-velo-lime transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-velo-lime/10 text-velo-lime flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-mountain"></i>
+                    </div>
+                    <p class="text-3xl sm:text-5xl font-black font-display text-white counter" data-target="45200">0</p>
+                    <p class="text-xs text-gray-400 mt-2 uppercase tracking-wider font-bold">Total Elevasi (Meter)</p>
+                </div>
+
+                <!-- Counter 3 -->
+                <div class="bg-velo-card p-6 rounded-2xl border border-gray-800 text-center hover:border-amber-400 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-400/10 text-amber-400 flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <p class="text-3xl sm:text-5xl font-black font-display text-white counter" data-target="14">0</p>
+                    <p class="text-xs text-gray-400 mt-2 uppercase tracking-wider font-bold">Total Tropi & Podium</p>
+                </div>
+
+                <!-- Counter 4 -->
+                <div class="bg-velo-card p-6 rounded-2xl border border-gray-800 text-center hover:border-velo-cyan transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-velo-cyan/10 text-velo-cyan flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <p class="text-3xl sm:text-5xl font-black font-display text-white counter" data-target="68">0</p>
+                    <p class="text-xs text-gray-400 mt-2 uppercase tracking-wider font-bold">Kecepatan Maks (KM/H)</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bike Garage Section -->
+    <section id="garage" class="py-20 bg-velo-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-velo-orange uppercase tracking-widest">Garasi & Equipment</h2>
+                <p class="text-3xl sm:text-4xl font-display font-black text-white mt-1">SEPEDA TANDING & SPESIFIKASI</p>
+                <div class="w-16 h-1 bg-velo-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Bike 1: Aero Road Bike -->
+                <div class="bg-velo-card border border-gray-800 rounded-2xl overflow-hidden hover:border-velo-orange transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 bg-gradient-to-tr from-gray-900 to-velo-dark p-6 relative flex items-center justify-center overflow-hidden">
+                            <i class="fa-solid fa-person-biking text-9xl text-velo-orange/15 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-extrabold bg-velo-orange text-white uppercase">Primary Race Rig</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-display font-black text-white">Specialized S-Works Tarmac SL7</h3>
+                            <p class="text-xs text-velo-orange font-bold uppercase tracking-wider mt-1 mb-4">Aero All-Rounder Road Bike</p>
+                            
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Frame:</span> <span class="font-semibold text-white">Fact 12r Carbon Aero</span>
+                                </li>
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Groupset:</span> <span class="font-semibold text-white">Shimano Dura-Ace Di2 12-Speed</span>
+                                </li>
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Wheelset:</span> <span class="font-semibold text-white">Roval Rapide CLX 50mm Carbon</span>
+                                </li>
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Berat Sepeda:</span> <span class="font-semibold text-velo-lime">6.8 kg (UCI Legal)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="p-3 bg-velo-black rounded-xl border border-gray-800 text-center">
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Fungsi Laga</p>
+                            <p class="text-xs font-bold text-white">Road Race & Criterium Speed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bike 2: Gravel Endurance Rig -->
+                <div class="bg-velo-card border border-gray-800 rounded-2xl overflow-hidden hover:border-velo-lime transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 bg-gradient-to-tr from-gray-900 to-velo-dark p-6 relative flex items-center justify-center overflow-hidden">
+                            <i class="fa-solid fa-mountain-sun text-9xl text-velo-lime/15 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-extrabold bg-velo-lime text-velo-black uppercase">All-Terrain Rig</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-display font-black text-white">Canyon Grizl CF SLX</h3>
+                            <p class="text-xs text-velo-lime font-bold uppercase tracking-wider mt-1 mb-4">Gravel & Off-Road Endurance</p>
+                            
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Frame:</span> <span class="font-semibold text-white">Ultra-light CF Carbon Gravel</span>
+                                </li>
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Groupset:</span> <span class="font-semibold text-white">SRAM Force XPLR eTap AXS</span>
+                                </li>
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Tires:</span> <span class="font-semibold text-white">Panaracer GravelKing 700x40c</span>
+                                </li>
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Berat Sepeda:</span> <span class="font-semibold text-velo-lime">8.2 kg</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="p-3 bg-velo-black rounded-xl border border-gray-800 text-center">
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Fungsi Laga</p>
+                            <p class="text-xs font-bold text-white">Gravel Race & Ultra Distance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bike 3: Time Trial Rig -->
+                <div class="bg-velo-card border border-gray-800 rounded-2xl overflow-hidden hover:border-velo-cyan transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 bg-gradient-to-tr from-gray-900 to-velo-dark p-6 relative flex items-center justify-center overflow-hidden">
+                            <i class="fa-solid fa-stopwatch-20 text-9xl text-velo-cyan/15 group-hover:scale-110 transition-transform duration-500"></i>
+                            <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-extrabold bg-velo-cyan text-velo-black uppercase">TT Speed Machine</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-display font-black text-white">Cervélo P5 Disc TT</h3>
+                            <p class="text-xs text-velo-cyan font-bold uppercase tracking-wider mt-1 mb-4">Pure Aerodynamic Time Trial</p>
+                            
+                            <ul class="space-y-2 text-xs text-gray-300">
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Frame:</span> <span class="font-semibold text-white">Cervélo All-Carbon Aero TT</span>
+                                </li>
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Groupset:</span> <span class="font-semibold text-white">Shimano Ultegra Di2 TT</span>
+                                </li>
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Wheelset:</span> <span class="font-semibold text-white">Rear Disc Wheel + Front 80mm Aero</span>
+                                </li>
+                                <li class="flex justify-between py-1.5 border-b border-gray-800">
+                                    <span class="text-gray-400">Berat Sepeda:</span> <span class="font-semibold text-velo-lime">8.5 kg</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="p-3 bg-velo-black rounded-xl border border-gray-800 text-center">
+                            <p class="text-[10px] text-gray-400 uppercase font-semibold">Fungsi Laga</p>
+                            <p class="text-xs font-bold text-white">Individual Time Trial (ITT)</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Routes Showcase Section -->
+    <section id="routes" class="py-20 bg-velo-dark border-t border-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-velo-orange uppercase tracking-widest">Peta Latihan</h2>
+                <p class="text-3xl sm:text-4xl font-display font-black text-white mt-1">RUTE & TANJAKAN FAVORIT</p>
+                <div class="w-16 h-1 bg-velo-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Route 1 -->
+                <div class="bg-velo-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between hover:border-velo-orange transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-velo-orange/20 text-velo-orange border border-velo-orange/30">
+                                HC Category Hill
+                            </span>
+                            <span class="text-xs text-gray-400 font-bold"><i class="fa-solid fa-map-pin text-velo-orange mr-1"></i> Mountain Pass</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Puncak KOM Challenge Loop</h3>
+                        <p class="text-xs text-gray-400 mb-6">Tanjakan ekstrem meliuk dengan persentase kemiringan rata-rata 8.5% hingga puncak.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-gray-800 text-center">
+                        <div class="bg-velo-black p-2.5 rounded-xl">
+                            <p class="text-[10px] text-gray-400">Jarak Tempuh</p>
+                            <p class="text-sm font-black text-white">78 KM</p>
+                        </div>
+                        <div class="bg-velo-black p-2.5 rounded-xl">
+                            <p class="text-[10px] text-gray-400">Elevasi Gain</p>
+                            <p class="text-sm font-black text-velo-lime">1,850 M</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 2 -->
+                <div class="bg-velo-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between hover:border-velo-orange transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                                Flat Speed Loop
+                            </span>
+                            <span class="text-xs text-gray-400 font-bold"><i class="fa-solid fa-map-pin text-amber-400 mr-1"></i> Coastal Highway</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Coastal Sprint Highway 100K</h3>
+                        <p class="text-xs text-gray-400 mb-6">Rute pesisir pantai lurus ideal untuk latihan pacu kecepatan tingggi dan draft paceline.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-gray-800 text-center">
+                        <div class="bg-velo-black p-2.5 rounded-xl">
+                            <p class="text-[10px] text-gray-400">Jarak Tempuh</p>
+                            <p class="text-sm font-black text-white">102 KM</p>
+                        </div>
+                        <div class="bg-velo-black p-2.5 rounded-xl">
+                            <p class="text-[10px] text-gray-400">Elevasi Gain</p>
+                            <p class="text-sm font-black text-velo-lime">340 M</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route 3 -->
+                <div class="bg-velo-card rounded-2xl border border-gray-800 p-6 flex flex-col justify-between hover:border-velo-orange transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold bg-velo-lime/20 text-velo-lime border border-velo-lime/30">
+                                Mixed Gravel
+                            </span>
+                            <span class="text-xs text-gray-400 font-bold"><i class="fa-solid fa-map-pin text-velo-lime mr-1"></i> Forest Trail</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Hutan Pinus Gravel Endurance</h3>
+                        <p class="text-xs text-gray-400 mb-6">Trek eksplorasi tanah liat, bebaktuan kecil, dan pemandangan hutan pinus rimbun.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-gray-800 text-center">
+                        <div class="bg-velo-black p-2.5 rounded-xl">
+                            <p class="text-[10px] text-gray-400">Jarak Tempuh</p>
+                            <p class="text-sm font-black text-white">65 KM</p>
+                        </div>
+                        <div class="bg-velo-black p-2.5 rounded-xl">
+                            <p class="text-[10px] text-gray-400">Elevasi Gain</p>
+                            <p class="text-sm font-black text-velo-lime">1,120 M</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-20 bg-velo-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-velo-orange uppercase tracking-widest">Dokumentasi Aksi</h2>
+                <p class="text-3xl sm:text-4xl font-display font-black text-white mt-1">GALERI BALAP & PODIUM VICTORY</p>
+                <div class="w-16 h-1 bg-velo-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Gallery 1 -->
+                <div class="relative group overflow-hidden rounded-2xl bg-velo-card border border-gray-800 h-64 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=1200', 'Sprint Finish Road Race')">
+                    <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=800" alt="Cycling Race Action" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.src='https://placehold.co/800x600/1c222d/ff5722?text=Peloton+Sprint+Action'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-velo-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="text-xs font-bold text-velo-orange uppercase">Peloton Action</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Speed Breakaway di Garis Finish</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 2 -->
+                <div class="relative group overflow-hidden rounded-2xl bg-velo-card border border-gray-800 h-64 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1517649763962-0c623266010b?q=80&w=1200', 'Podium Championship Victory')">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623266010b?q=80&w=800" alt="Podium Victory" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.src='https://placehold.co/800x600/1c222d/ccff00?text=Podium+Victory+Trophy'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-velo-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="text-xs font-bold text-velo-lime uppercase">Podium Celebrations</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Selebrasi Penyerahan Tropi Emas</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 3 -->
+                <div class="relative group overflow-hidden rounded-2xl bg-velo-card border border-gray-800 h-64 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=1200', 'Hill Climb KOM Session')">
+                    <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=800" alt="Hill Climb" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.src='https://placehold.co/800x600/1c222d/00e5ff?text=Mountain+Pass+Climb'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-velo-black via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <span class="text-xs font-bold text-velo-cyan uppercase">Climbing Altitude</span>
+                        <h4 class="text-lg font-bold text-white mt-1">Latihan Kadens Tanjakan Puncak</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Sponsorship Section -->
+    <section id="contact" class="py-20 bg-velo-dark border-t border-gray-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Left -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-bold text-velo-orange uppercase tracking-widest">Kolaborasi & Sponsor</h2>
+                        <p class="text-3xl sm:text-4xl font-display font-black text-white mt-1">HUBUNGI MOH NAKULA</p>
+                        <div class="w-16 h-1 bg-velo-orange mt-4 rounded-full"></div>
+                    </div>
+
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Terbuka untuk sponsorship produk sepeda, ajakan sparring gowes bersama, undangan tim balap, atau liputan media olahraga.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-velo-card border border-gray-800">
+                            <div class="w-10 h-10 rounded-lg bg-velo-orange/10 text-velo-orange flex items-center justify-center">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Official Email</p>
+                                <p class="font-bold text-white text-sm">nakula.cyclist@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-velo-card border border-gray-800">
+                            <div class="w-10 h-10 rounded-lg bg-velo-lime/10 text-velo-lime flex items-center justify-center">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Domisili / Basecamp</p>
+                                <p class="font-bold text-white text-sm">Indonesia &bull; Training Hub</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Handles -->
+                    <div class="pt-4 flex items-center gap-3">
+                        <a href="#" class="w-11 h-11 rounded-xl bg-velo-card border border-gray-700 flex items-center justify-center text-gray-300 hover:text-velo-orange hover:border-velo-orange transition-colors" aria-label="Strava">
+                            <i class="fa-solid fa-person-biking text-lg"></i>
+                        </a>
+                        <a href="#" class="w-11 h-11 rounded-xl bg-velo-card border border-gray-700 flex items-center justify-center text-gray-300 hover:text-velo-orange hover:border-velo-orange transition-colors" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-11 h-11 rounded-xl bg-velo-card border border-gray-700 flex items-center justify-center text-gray-300 hover:text-velo-orange hover:border-velo-orange transition-colors" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form Right -->
+                <div class="lg:col-span-7 bg-velo-card border border-gray-800 p-6 sm:p-8 rounded-2xl">
+                    <h3 class="text-xl font-display font-bold text-white mb-6">Kirim Pesan Kerjasama / Gowes</h3>
+                    
+                    <form id="veloContactForm" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 mb-1">Nama Lengkap</label>
+                                <input type="text" required placeholder="Nama Anda" class="w-full bg-velo-black border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-velo-orange">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 mb-1">Email / Kontak</label>
+                                <input type="email" required placeholder="email@domain.com" class="w-full bg-velo-black border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-velo-orange">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 mb-1">Kategori Kepentingan</label>
+                            <select class="w-full bg-velo-black border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-velo-orange">
+                                <option>Sponsorship & Brand Ambassador</option>
+                                <option>Undangan Event Balap Sepeda</option>
+                                <option>Gowes Bareng / Joint Ride</option>
+                                <option>Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 mb-1">Pesan Lengkap</label>
+                            <textarea rows="4" required placeholder="Tulis rincian pesan atau tawaran kerjasama Anda..." class="w-full bg-velo-black border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-velo-orange"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-velo-orange to-amber-500 text-white font-extrabold flex items-center justify-center gap-2 hover:shadow-[0_0_25px_rgba(255,87,34,0.4)] transition-all">
+                            <i class="fa-solid fa-paper-plane"></i> Kirim Pesan Sekarang
+                        </button>
+                    </form>
+
+                    <div id="veloFormAlert" class="hidden mt-4 p-4 rounded-xl bg-velo-orange/10 border border-velo-orange text-velo-orange text-xs font-bold text-center">
+                        Pesan berhasil terkirim! Moh Nakula akan segera merespons email Anda.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trophy Detail Modal -->
+    <div id="trophyModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-velo-card border border-gray-700 rounded-2xl max-w-lg w-full p-6 relative">
+            <button onclick="closeTrophyModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="px-3 py-1 rounded-full text-[10px] font-black bg-amber-500/20 text-amber-400 border border-amber-500/40 uppercase" id="mCategory">
+                Category
+            </span>
+            <h3 class="text-2xl font-display font-black text-white mt-3 mb-1" id="mTitle">Trophy Title</h3>
+            <p class="text-xs text-velo-orange font-bold mb-4" id="mSub">Year & Details</p>
+            <div class="p-4 bg-velo-black rounded-xl border border-gray-800 text-xs text-gray-300 leading-relaxed mb-4" id="mDesc">
+                Description detail...
+            </div>
+            <button onclick="closeTrophyModal()" class="w-full py-2.5 rounded-xl bg-gray-800 text-white text-xs font-bold hover:bg-gray-700 transition-colors">
+                Tutup Window
+            </button>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox Modal -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="max-w-4xl w-full text-center relative" onclick="event.stopPropagation()">
+            <img id="lightboxImg" src="" alt="Gallery Preview" class="max-h-[80vh] mx-auto rounded-xl border border-gray-700 shadow-2xl">
+            <p id="lightboxCaption" class="text-sm font-bold text-white mt-4"></p>
+            <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-white text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-velo-black border-t border-gray-900 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 MOH NAKULA - Champion Cyclist Portfolio. All rights reserved.</p>
+            <p class="mt-1 text-gray-600">Built for Speed, Endurance & Victory on Wheels</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Script Logic -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Trophy Filter Logic
+        const trophyFilters = document.querySelectorAll('.trophy-filter');
+        const trophyCards = document.querySelectorAll('.trophy-card');
+
+        trophyFilters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                trophyFilters.forEach(b => {
+                    b.classList.remove('bg-velo-orange', 'text-white', 'active');
+                    b.classList.add('bg-velo-card', 'text-gray-300');
+                });
+                btn.classList.add('bg-velo-orange', 'text-white', 'active');
+                btn.classList.remove('bg-velo-card', 'text-gray-300');
+
+                const filter = btn.getAttribute('data-filter');
+
+                trophyCards.forEach(card => {
+                    if (filter === 'all' || card.classList.contains(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Trophy Modal Logic
+        function openTrophyModal(title, year, category, distance, desc) {
+            document.getElementById('mTitle').innerTe
